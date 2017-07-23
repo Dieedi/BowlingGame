@@ -15,11 +15,9 @@ public class PinCounter : MonoBehaviour {
     private int lastMaxFallen = 10;
     private PinSetter pinSetter;
     private CameraController cameraController;
-    private Ball ball;
     private GameManager gameManager;
 	
     void Start () {
-        ball = FindObjectOfType<Ball> ();
         pinCounterText = GameObject.Find ("PinCounterText").GetComponent<Text> ();
         gameManager = FindObjectOfType<GameManager> ();
         pinSetter = FindObjectOfType<PinSetter> ();
@@ -93,5 +91,7 @@ public class PinCounter : MonoBehaviour {
     public void Reset () {
         lastMaxFallen = 10;
         countFallen = 0;
+        pinCounterText.color = Color.black;
+        pinCounterText.text = lastMaxFallen.ToString();
     }
 }

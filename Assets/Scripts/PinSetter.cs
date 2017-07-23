@@ -93,7 +93,7 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	public void RenewPins () {
-		Instantiate (Pins, new Vector3 (0f, 40f, 1890f), Quaternion.identity);
+		Instantiate (Pins, new Vector3 (-142f, 40f, 1890f), Quaternion.identity);
         pinCounter.Reset ();
 	}
 

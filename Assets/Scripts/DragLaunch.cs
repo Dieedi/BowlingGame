@@ -40,9 +40,12 @@ public class DragLaunch : MonoBehaviour {
 			dragEndPosition = Input.mousePosition;
 			endTimer = Time.time;
 
-			float dragSpeed = endTimer - startTimer;
+            float dragSpeed = endTimer - startTimer;
 			float dragVelocityX = (dragEndPosition.x - dragStartPosition.x) / dragSpeed;
 			float dragVelocityZ = (dragEndPosition.y - dragStartPosition.y) / dragSpeed;
+            if (dragVelocityZ <= 100) {
+                dragVelocityZ = 100;
+            }
 
 			Vector3 DragVelocity = new Vector3 (dragVelocityX, 0, dragVelocityZ);
 			if (!ball.ballLaunched) {

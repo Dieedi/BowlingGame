@@ -41,6 +41,7 @@ public class Ball : MonoBehaviour {
 	void Update () {
 		if (transform.position.z >= 1400 && !camActivated) {
 			cameraController.ActivateEndCam ();
+            //cameraController.DisableStartCam ();
 			camActivated = true;
 		}
 	}
@@ -56,6 +57,8 @@ public class Ball : MonoBehaviour {
 		cameraController.DisableEndCam ();
 		cameraController.EndCamFocus (gameObject);
 		camActivated = false;
+
+        //cameraController.ActivateStartCam ();
 	}
 
     void OnCollisionEnter (Collision coll) {
